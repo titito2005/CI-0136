@@ -1,0 +1,9 @@
+Este código no sólo corrige el difícil error del original, también se basa en clases 
+para respetar el principio de "ocultamiento de información".
+
+NOTA#1: el uso de punteros a instancias de clases derivadas es inevitable.
+NOTA#2: por tanto los destructores de ColoredShape y TransparentShape deben explícitamente
+        incluir código para destruir la instancia de clase derivada de Shape contenida.
+NOTA#3: por tanto Shape requiere un destructor virtual, para que el enlace dinámico
+        funcione cuando desde los destructores de ColoredShape y TransparentShape se intenta
+        liberar la memoria de la instancia de Shape asociada dinámicamente.
